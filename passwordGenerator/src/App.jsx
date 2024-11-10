@@ -15,7 +15,6 @@ function App() {
   //useCallback is a React Hook that lets you cache a function definition between re-renders. mtlb jitna part run hua hai function ka utna memory me rkh lo and agar usko re render kiya jaye to pichla wala result bhi add krdo
   //use call back ek function leta hai or dependecy leta hai in array format yhi dependency useCallback ko baar baar run karati hai ye dependecy as a trigger point hoti a usecallback ko run karana ke liye
   //useCall back ek bht optimise hook h jo memoization use krta h
-
   const passwordGenerator=useCallback(()=>{
     let password=""
     let str="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
@@ -40,7 +39,7 @@ function App() {
   //sahi tarika yhi hai ki ham useEffect hook use kare
   useEffect(()=>{
     passwordGenerator()
-  },[length,charactersAllowed,numberAllowed,passwordGenerator])//dependency array, mtlb ye sari dependency pe ye hook firse run krdega function ko
+  },[length,charactersAllowed,numberAllowed])//dependency array, mtlb ye sari dependency pe ye hook firse run krdega function ko
 
   return (
     <>
